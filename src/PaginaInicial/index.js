@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles.css"
 
 import filmeEnolaHolmes from "../imagens/image3.png"
@@ -41,7 +42,9 @@ function Filmes () {
 function Filme ({filme}) {
     return (
         <div className="filme">
-            <img src={filme} />
+            <Link to = "/sessoes/:idfilme">
+                <img src={filme} />
+            </Link>
         </div>
     )
 }

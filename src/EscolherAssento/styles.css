@@ -1,0 +1,155 @@
+.escolher-assento {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 67px;
+}
+.escolher-assento .titulo {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 24px;
+    color: #293845;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.escolher-assento .assentos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 24px;
+}
+.escolher-assento .assentos .cadeira {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 11px;
+    color: #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.escolher-assento .legenda {
+    width: 100%;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 13px;
+    color: #4E5A65;
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 42px;
+}
+.escolher-assento .legenda .opcao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+.escolher-assento .assentos .true {
+    background-color: #C3CFD9;
+    border: 1px solid #808F9D;
+}
+.escolher-assento .assentos .false {
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+}
+.escolher-assento .assentos .selecionado {
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+
+.escolher-assento .dados {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    color: #293845;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 24px;
+}
+.escolher-assento .dados input {
+    height: 51px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    border: 1px solid #D4D4D4;
+}
+.escolher-assento .dados input::placeholder {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    font-style: italic;
+    color: #AFAFAF;
+
+    padding-left: 14px;
+}
+
+.escolher-assento .botao {
+    display: flex;
+    justify-content: center;
+}
+.escolher-assento button {
+    width: 225px;
+    height: 42px;
+    background-color: #E8833A;
+    border-radius: 3px;
+    border: none;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 57px;
+    margin-bottom: 30px;
+}
+
+.escolher-assento .footer {
+    height: 117px;
+    background-color: #DFE6ED;
+    border: 1px solid #9EADBA;
+    
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+}
+.escolher-assento .footer .imagem {
+    width: 64px;
+    height: 89px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.escolher-assento .footer .imagem img {
+    width: 48px;
+    height: 72px;
+}
+.escolher-assento .footer .informacoes {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 26px;
+    color: #293845;
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 14px;
+    gap: 5px;
+}

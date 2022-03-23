@@ -1,0 +1,87 @@
+.escolher-sessao {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 67px;
+}
+.escolher-sessao .titulo {
+    width: 100vw;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 24px;
+    color: #293845;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.escolher-sessao .sessoes {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    padding: 0 24px;
+}
+.escolher-sessao .sessoes .sessao {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 24px;
+    color: #293845;
+}
+.escolher-sessao .sessoes .sessao .horarios {
+    display: flex;
+    gap: 8px;
+    margin-top: 22px;
+}
+.escolher-sessao .sessoes .sessao .horarios .horario {
+    width: 83px;
+    height: 43px;
+    background-color: #E8833A;
+    border-radius: 3px;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.escolher-sessao .rodape {
+    width: 100vw;
+    height: 117px;
+    background-color: #DFE6ED;
+    border: 1px solid #9EADBA;
+    
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 26px;
+    color: #293845;
+    
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 10px;
+
+    position: fixed;
+    bottom: 0%;
+}
+.escolher-sessao .rodape .filme {
+    width: 64px;
+    height: 89px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.escolher-sessao .rodape img {
+    width: 48px;
+    height: 72px;
+}
