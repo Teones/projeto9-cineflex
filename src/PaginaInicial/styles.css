@@ -1,0 +1,41 @@
+.pagina-inicial {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 67px;
+}
+.pagina-inicial .titulo {
+    width: 100vw;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 24px;
+    color: #293845;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.pagina-inicial .lista-de-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 38px;
+    justify-content: center;
+    padding: 0 30px;
+}
+.pagina-inicial .lista-de-filmes .filme {
+    width: 145px;
+    height: 209px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px 2px #0000001A;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagina-inicial .lista-de-filmes img {
+    width: 129px;
+    height: 193px;
+}
