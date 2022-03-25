@@ -23,6 +23,7 @@
     flex-direction: column;
     gap: 23px;
     padding: 0 24px;
+    padding-bottom: 140px;
 }
 .escolher-sessao .sessoes .sessao {
     font-family: "Roboto";
@@ -49,7 +50,7 @@
     justify-content: center;
     align-items: center;
 }
-.escolher-sessao .sessoes .sessao .horarios .horario a:-webkit-any-link {
+.escolher-sessao .sessoes .sessao .horarios a:-webkit-any-link {
     text-decoration: none;
     color: #FFFFFF;
 }

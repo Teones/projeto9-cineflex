@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
-import EnolaHolmes from "../imagens/image6.png"
 import "./styles.css"
 
 export default function EscolherSessao () {
@@ -31,54 +30,63 @@ function Sessoes () {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${id}/showtimes`)
 
         requisicao.then(resposta => {
-            setSessao(resposta.data)
-            console.log(resposta.data)
+            setSessao(resposta.data.days)
         })
     }, []);
 
     return (
         <div className="sessoes">
-            <div className="sessao">
-                Quinta-feira - 2021
-                <div className="horarios">
-                    <div className="horario">
-                        <Link to = "/assentos/:idSessao">
-                            15:00
-                        </Link>
-                    </div>
-                    <div className="horario">
-                    <Link to = "/assentos/:idSessao">
-                        19:00
-                    </Link>
-                    </div>    
-                </div>
-            </div>
-            <div className="sessao">
-                Quinta-feira - 2021
-                <div className="horarios">
-                    <div className="horario">
-                        <Link to = "/assentos/:idSessao">
-                            15:00
-                        </Link>
-                    </div>
-                    <div className="horario">
-                        <Link to = "/assentos/:idSessao">
-                            19:00
-                        </Link>
-                    </div>    
-                </div>
+            {sessao ? (
+                sessao.map(filme => <Sessao weekday={filme.weekday} date={filme.date} showtimes={filme.showtimes} />)
+            ) : "carregando imagens"}
+        </div>
+    )
+}
+
+function Sessao (props) {
+    const {weekday, date, showtimes} = props
+
+    return (
+        <div className="sessao">
+            {weekday} - {date}
+            <div className="horarios">
+                {showtimes.map(horarios => <Horarios showtimes={horarios.name} />)}
             </div>
         </div>
     )
 }
 
+function Horarios ({showtimes}) {
+    const { id } = useParams();
+    const link = `/assentos/${id}`
+
+    return (
+        <Link to = {link}>
+            <div className="horario">
+                {showtimes}
+            </div>
+        </Link>
+    )
+}
+
 function RodaPe () {
+    const { id } = useParams();
+    const [sessao, setSessao] = useState("")
+
+    useEffect(() => {
+        const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${id}/showtimes`)
+
+        requisicao.then(resposta => {
+            setSessao(resposta.data)
+        })
+    }, []);
+
     return (
         <div className="rodape">
             <div className="filme">
-                <img src={EnolaHolmes} />
+                <img src={sessao.posterURL} />
             </div>
-            Enola Holmes
+            {sessao.title}
         </div>
     )
 }
