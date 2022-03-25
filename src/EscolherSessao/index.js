@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 import EnolaHolmes from "../imagens/image6.png"
 import "./styles.css"
@@ -22,6 +24,18 @@ function Titulo () {
 }
 
 function Sessoes () {
+    const { id } = useParams();
+    const [sessao, setSessao] = useState("")
+
+    useEffect(() => {
+        const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${id}/showtimes`)
+
+        requisicao.then(resposta => {
+            setSessao(resposta.data)
+            console.log(resposta.data)
+        })
+    }, []);
+
     return (
         <div className="sessoes">
             <div className="sessao">

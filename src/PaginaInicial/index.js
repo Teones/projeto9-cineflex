@@ -1,8 +1,8 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./styles.css"
 
-import filmeEnolaHolmes from "../imagens/image3.png"
-import filme2067 from "../imagens/image6.png"
 
 export default function PaginaInicial () {
     return (
@@ -22,28 +22,31 @@ function Titulo () {
 }
 
 function Filmes () {
-    const filmes = [
-        {filme: filmeEnolaHolmes},
-        {filme: filme2067},
-        {filme: filmeEnolaHolmes},
-        {filme: filme2067},
-        {filme: filmeEnolaHolmes},
-        {filme: filme2067},
-        {filme: filmeEnolaHolmes},
-        {filme: filme2067},
-    ]
+    const [image, setImage] = useState("");
+
+    useEffect(() => {
+		const requisicao = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
+
+		requisicao.then(resposta => {
+			setImage(resposta.data);
+		});
+	}, []);
+    
     return (
         <div className="lista-de-filmes">
-            {filmes.map(cartaz => <Filme filme={cartaz.filme} />)}
+            {image ? (
+                image.map(filme => <Filme posterURL={filme.posterURL} id={filme.id}/>)
+            ) : "carregando imagens"}
         </div>
     )
 }
 
-function Filme ({filme}) {
+function Filme ({posterURL, id}) {
+    const link = `/sessoes/filme/${id}`
     return (
         <div className="filme">
-            <Link to = "/sessoes/:idfilme">
-                <img src={filme} />
+            <Link to = {link}>
+                <img src={posterURL} />
             </Link>
         </div>
     )
