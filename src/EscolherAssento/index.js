@@ -100,9 +100,11 @@ function Dados () {
 
 function Botao () {
     return (
-        <div className="botao">
-            <button>Reservar assento(s)</button>
-        </div>
+        <Link to="/sucesso">
+            <div className="botao">
+                <button>Reservar assento(s)</button>
+            </div>
+        </Link>
     )
 }
 

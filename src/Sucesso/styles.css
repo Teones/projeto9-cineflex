@@ -1,0 +1,70 @@
+.sucesso {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 67px;
+}
+.sucesso .titulo {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 24px;
+    color: #247A6B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.sucesso .informacoes {
+    display: flex;
+    flex-direction: column;
+    padding-left: 29px;
+    margin-top: 30px;
+}
+.sucesso .informacoes h1 {
+    font-family: "roboto";
+    font-size: 24px;
+    font-weight: 700;
+    color: #293845;
+
+    margin-bottom: 15px;
+}
+.sucesso .informacoes p {
+    font-family: "roboto";
+    font-size: 22px;
+    font-weight: 400;
+    color: #293845;
+
+    margin-bottom: 10px;
+}
+
+
+.sucesso .botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sucesso button {
+    width: 225px;
+    height: 42px;
+    background-color: #E8833A;
+    border-radius: 3px;
+    border: none;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 57px;
+    margin-bottom: 30px;
+}
+.sucesso a:-webkit-any-link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
