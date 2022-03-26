@@ -38,36 +38,37 @@ function Sessoes () {
         <div className="sessoes">
             {sessao ? (
                 sessao.map(filme => <Sessao weekday={filme.weekday} date={filme.date} showtimes={filme.showtimes} />)
-            ) : "carregando imagens"}
+            ) : "carregando sessões"}
         </div>
     )
 }
 
-function Sessao (props) {
+function Sessao(props) {
     const {weekday, date, showtimes} = props
 
     return (
         <div className="sessao">
             {weekday} - {date}
             <div className="horarios">
-                {showtimes.map(horarios => <Horarios showtimes={horarios.name} />)}
+                {showtimes.map(horarios => <Horario name={horarios.name} id={horarios.id} />)}
             </div>
         </div>
     )
 }
 
-function Horarios ({showtimes}) {
-    const { id } = useParams();
+function Horario (props) {
+    const {name, id} = props
     const link = `/assentos/${id}`
 
     return (
-        <Link to = {link}>
+        <Link to={link}>
             <div className="horario">
-                {showtimes}
+                {name}
             </div>
         </Link>
     )
 }
+
 
 function RodaPe () {
     const { id } = useParams();
