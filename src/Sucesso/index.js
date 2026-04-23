@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
-
 import "./styles.css"
 
 export default function Sucesso (props) {
-    const {data, nomeFilme, sessao} = props
+    const {data, nomeFilme, sessao, nome, cpf, assentos = []} = props
+    
     return (
         <div className="sucesso">
             <Titulo />
-            <Informacoes data={data} nomeFilme={nomeFilme} sessao={sessao} />
+            <Informacoes 
+                data={data} 
+                nomeFilme={nomeFilme} 
+                sessao={sessao} 
+                nome={nome} 
+                cpf={cpf} 
+                assentos={assentos} 
+            />
             <Finalizar />
         </div>
     )
@@ -22,13 +29,13 @@ function Titulo () {
 }
 
 function Informacoes (props) {
-    const {data, nomeFilme, sessao} = props
+    const {data, nomeFilme, sessao, nome, cpf, assentos} = props
 
     return (
         <div className="informacoes">
             <Filme data={data} nomeFilme={nomeFilme} sessao={sessao} />
-            <Ingressos />
-            <Comprador />
+            <Ingressos assentos={assentos} />
+            <Comprador nome={nome} cpf={cpf} />
         </div>
     )
 }
@@ -44,21 +51,24 @@ function Filme(props) {
         </>
     )
 }
-function Ingressos() {
+
+function Ingressos({ assentos }) {
     return(
         <>
             <h1>Ingressos</h1>
-            <p>Assento </p>
-            <p>Assento </p>
+            {assentos.map((numero, index) => (
+                <p key={index}>Assento {numero}</p>
+            ))}
         </>
     )
 }
-function Comprador () {
+
+function Comprador ({ nome, cpf }) {
     return (
         <>
-            <h1>Ingressos</h1>
-            <p>Nome: </p>
-            <p>CPF: </p>
+            <h1>Comprador</h1> 
+            <p>Nome: {nome}</p>
+            <p>CPF: {cpf}</p>
         </>
     )
 }
@@ -67,7 +77,7 @@ function Finalizar () {
     return (
         <Link to="/">
             <div className="botao">
-                <button>Voltar para Home</button>
+                <button>Voltar pra Home</button>
             </div>
         </Link>
     )

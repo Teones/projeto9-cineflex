@@ -12,8 +12,9 @@ export default function App () {
     const [nomeFilme, setNomeFilme] = useState("")
     const [data, setData] = useState("")
     const [sessao, setSessao] = useState("")
-    // const [cadeira, setCadeira] = useState()
-    const [nome, setNone] = useState("")
+    const [nome, setNome] = useState("")
+    const [cpf, setCpf] = useState("")
+    const [assentos, setAssentos] = useState([])
 
     console.log(nomeFilme, data, sessao, nome)
     
@@ -24,8 +25,22 @@ export default function App () {
                 <Route path="/" element={<PaginaInicial filme   />} />
                 <Route path="/sessoes/filme/:id" element={<EscolherSessao />} />
                 <Route path="/assentos/:id" element={<EscolherAssento 
-                    setNomeFilme={setNomeFilme} setSessao={setSessao} setData={setData} setNone={setNone} nome={nome}/>} />
-                <Route path="/sucesso" element={<Sucesso data={data} nomeFilme={nomeFilme} sessao={sessao} />}/>
+                    setNomeFilme={setNomeFilme} 
+                    setSessao={setSessao} 
+                    setData={setData} 
+                    setNome={setNome} 
+                    nome={nome}
+                    setCpf={setCpf}
+                    cpf={cpf}
+                    setAssentos={setAssentos}
+                    />} />
+                <Route path="/sucesso" element={<Sucesso 
+                    data={data} 
+                    nomeFilme={nomeFilme} 
+                    sessao={sessao} 
+                    nome={nome} 
+                    cpf={cpf} 
+                    assentos={assentos} />}/>
             </Routes>
         </BrowserRouter>
     )
