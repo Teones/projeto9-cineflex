@@ -19,10 +19,10 @@ export default function App () {
     console.log(nomeFilme, data, sessao, nome)
     
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header />
             <Routes>
-                <Route path="/" element={<PaginaInicial filme   />} />
+                <Route path="/" element={<PaginaInicial filme />} />
                 <Route path="/sessoes/filme/:id" element={<EscolherSessao />} />
                 <Route path="/assentos/:id" element={<EscolherAssento 
                     setNomeFilme={setNomeFilme} 
