@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/projeto9-cineflex/static/css/main.f21138e5.chunk.css",
-    "main.js": "/projeto9-cineflex/static/js/main.541f8a96.chunk.js",
-    "main.js.map": "/projeto9-cineflex/static/js/main.541f8a96.chunk.js.map",
+    "main.js": "/projeto9-cineflex/static/js/main.1b857b15.chunk.js",
+    "main.js.map": "/projeto9-cineflex/static/js/main.1b857b15.chunk.js.map",
     "runtime-main.js": "/projeto9-cineflex/static/js/runtime-main.1a6ad548.js",
     "runtime-main.js.map": "/projeto9-cineflex/static/js/runtime-main.1a6ad548.js.map",
     "static/js/2.ca74658e.chunk.js": "/projeto9-cineflex/static/js/2.ca74658e.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.1a6ad548.js",
     "static/js/2.ca74658e.chunk.js",
     "static/css/main.f21138e5.chunk.css",
-    "static/js/main.541f8a96.chunk.js"
+    "static/js/main.1b857b15.chunk.js"
   ]
 }
